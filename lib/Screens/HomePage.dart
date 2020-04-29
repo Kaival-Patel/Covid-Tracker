@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19/Screens/Reports.dart';
 import 'package:covid_19/Screens/Statistics.dart';
 import 'package:covid_19/Widgets/TestCard.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:flutter/services.dart';
 import '../constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Widgets/SymptomCard.dart';
@@ -16,82 +17,115 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _children=[
     Home(),
     Statistics(),
-    Text("Reports"),
+    Reports(),
     Text("Developer Profile")
   ];
   int _currentbottomPos=0;
 
 
-  viewDevInsta() async{
-  
-  const url = 'https://instagram.com/kaival.dart';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
+  @override
+  void initState(){
+    super.initState();
+    // setState(() {
+    //   themeMode="light";
+    // });
+    // print("THEME:$themeMode");
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //AppBar
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: cust_backgroundColor,
-        title: AutoSizeText("Covid-19 Tracker by Kaival",style: cust_TitleTextStyle,),
-        actions: <Widget>[
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(7.0),
-                child: GestureDetector(
-                  //view my repo on github
-                    onTap: (){
-                      viewDevInsta();
-                    },
-                    child: CircleAvatar(
-                    maxRadius: 17.0,
-                    backgroundImage: AssetImage("assets/img/developer.png"),
-                  ),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: onBottomBarItemChanged,
-        currentIndex: _currentbottomPos,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items:[
-          BottomNavigationBarItem( 
-            title: Text(""),
-            icon: Icon(Icons.home,color: Colors.grey,),
-            activeIcon: Icon(Icons.home,color:cust_backgroundColor,),
-          ),
-          BottomNavigationBarItem(
-            title: Text(""),
-            icon: Icon(Icons.assessment,color: Colors.grey,),
-            activeIcon: Icon(Icons.assessment,color:cust_backgroundColor,),
-          ),
-          BottomNavigationBarItem(
-            title: Text(""),
-            icon: Icon(Icons.content_paste,color: Colors.grey,),
-            activeIcon: Icon(Icons.content_paste,color:cust_backgroundColor,),
-          ),
-          BottomNavigationBarItem(
-            title: Text(""),
-            icon: Icon(Icons.person,color: Colors.grey,),
-            activeIcon: Icon(Icons.person,color:cust_backgroundColor,),
-          ),
-        ] 
-      ),
+    return WillPopScope(
+          onWillPop: (){SystemNavigator.pop();},
+          child: Scaffold(
+        //AppBar
+        backgroundColor:themeMode=="light"?cust_lighttheme:cust_darktheme,
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: cust_backgroundColor,
+          title: AutoSizeText("Covid-19 Tracker by Kaival",style: cust_TitleTextStyle,),
+          actions: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(7.0),
+                  child: GestureDetector(
+                    //view my repo on github
+                      onTap: (){
+                        setState(() {
+                          if(themeMode=="light"){
+                            themeMode="dark";
+                          }
+                          else{
+                            themeMode="light";
+                          }
+                          if(_currentbottomPos==0){
+                            Navigator.pop(context);
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context)=>HomePage()
+                            ));
+                          }
+                          else if(_currentbottomPos==1){
+                            onBottomBarItemChanged(0);
+                          }
+                          else if(_currentbottomPos==2){
+                            onBottomBarItemChanged(0);
+                          }
+                          else{
+                            onBottomBarItemChanged(0);
+                          }
 
-      body:_children[_currentbottomPos]
+
+            
+                        });
+                      },
+                      child: CircleAvatar(
+                      maxRadius: 17.0,
+                      backgroundImage: themeMode=="light" ? AssetImage("assets/svg/moon.png"):AssetImage("assets/svg/sun.png"),
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+        bottomNavigationBar: Theme(
+            data: Theme.of(context).copyWith(
+              canvasColor: themeMode=="light"?cust_lighttheme:cust_darktheme
+            ),
+            child: BottomNavigationBar(
+            onTap: onBottomBarItemChanged,
+            currentIndex: _currentbottomPos,
+            backgroundColor: Colors.black,
+            showSelectedLabels: false,
+            items:[
+              BottomNavigationBarItem( 
+                title: Text(""),
+                icon: Icon(Icons.home,color: Colors.grey,),
+                activeIcon: Icon(Icons.home,color:cust_backgroundColor,),
+              ),
+              BottomNavigationBarItem(
+                title: Text(""),
+                icon: Icon(Icons.assessment,color: Colors.grey,),
+                activeIcon: Icon(Icons.assessment,color:cust_backgroundColor,),
+              ),
+              BottomNavigationBarItem(
+                title: Text(""),
+                icon: Icon(Icons.assignment,color: Colors.grey,),
+                activeIcon: Icon(Icons.assignment,color:cust_backgroundColor,),
+              ),
+              BottomNavigationBarItem(
+                title: Text(""),
+                icon: Icon(Icons.person,color: Colors.grey,),
+                activeIcon: Icon(Icons.person,color:cust_backgroundColor,),
+              ),
+            ] 
+          ),
+        ),
+
+        body:_children[_currentbottomPos]
+      ),
     );
   }
 
@@ -141,7 +175,7 @@ class Home extends StatelessWidget {
                   children: <Widget>[
                     Row(
                       children: <Widget>[
-                        Text("Prevention",style: cust_HeadingTextStyle,),
+                        Text("Prevention",style: cust_HeadingTextStyle.copyWith(color: themeMode=="light"?cust_darktheme:cust_lighttheme),),
                         
                       ],
                     ),
@@ -155,10 +189,10 @@ class Home extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               Image(image: AssetImage("assets/svg/home.png"),height: 50,width:50,),
-                              Text("Stay At Home",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
+                              Text("Stay At Home",style: cust_bodyTextStyle.copyWith(fontSize: 12,color:themeMode=="light"?cust_darktheme:cust_lighttheme),textAlign: TextAlign.center),
                               Padding(padding: EdgeInsets.only(top:25.0),),
                               Image(image: AssetImage("assets/svg/cough.png"),height: 50,width:50,),
-                              Text("Cover Coughs\nand sneezes",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
+                              Text("Cover Coughs\nand sneezes",style: cust_bodyTextStyle.copyWith(fontSize: 12,color: themeMode=="light"?cust_darktheme:cust_lighttheme),textAlign: TextAlign.center)
                                   
                             ],
                           ),
@@ -168,10 +202,10 @@ class Home extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               Image(image: AssetImage("assets/svg/distance.png"),height: 50,width:50,),
-                              Text("Keep a Safe \n  Distance",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
+                              Text("Keep a Safe \n  Distance",style: cust_bodyTextStyle.copyWith(fontSize: 12,color: themeMode=="light"?cust_darktheme:cust_lighttheme),textAlign: TextAlign.center),
                               Padding(padding: EdgeInsets.only(top:5.0),),
                               Image(image: AssetImage("assets/svg/mask.png"),height: 50,width:50,),
-                              Text("Wear facemask\nif you are sick",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
+                              Text("Wear facemask\nif you are sick",style: cust_bodyTextStyle.copyWith(fontSize: 12,color: themeMode=="light"?cust_darktheme:cust_lighttheme),textAlign: TextAlign.center)
                                 
                             ],
                           ),
@@ -181,10 +215,10 @@ class Home extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               Image(image: AssetImage("assets/svg/hands.png"),height: 50,width:50,),
-                              Text("Wash hands\noften",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
+                              Text("Wash hands\noften",style: cust_bodyTextStyle.copyWith(fontSize: 12,color: themeMode=="light"?cust_darktheme:cust_lighttheme),textAlign: TextAlign.center),
                               Padding(padding: EdgeInsets.only(top:5.0),),
                               Image(image: AssetImage("assets/svg/clean.png"),height: 50,width:50,),
-                              Text("Clean and\ndisinfect",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
+                              Text("Clean and\ndisinfect",style: cust_bodyTextStyle.copyWith(fontSize: 12,color: themeMode=="light"?cust_darktheme:cust_lighttheme),textAlign: TextAlign.center)
                             ],
                           ),
                         ),

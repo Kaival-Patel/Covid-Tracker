@@ -23,6 +23,7 @@ class _HelpAlertBoxState extends State<HelpAlertBox> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor:themeMode=="light"?cust_lighttheme:cust_darktheme,
       title: Text("Help"),
       content: SizedBox(
         height: 350,
@@ -47,6 +48,7 @@ class _HelpAlertBoxState extends State<HelpAlertBox> {
                 
                 Padding(padding: EdgeInsets.only(top:20),),
                 DropdownButton(
+  
                   items: <String>["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka", "Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu", "Telengana","Tripura", "Uttarakhand", "Uttar Pradesh","West Bengal","Andaman and Nicobar Islands","Chandigarh","Dadra and Nagar Haveli","Daman & Diu","Delhi","Jammu and Kashmir", "Ladakh","Lakshadweep","Puducherry",]
                   .map((String value){
                     return DropdownMenuItem<String>(
@@ -61,7 +63,7 @@ class _HelpAlertBoxState extends State<HelpAlertBox> {
                     });
                     fetchEmergencyPhone(value);
                   },
-                  hint: Text(statehintText),
+                  hint: Text(statehintText,style: TextStyle(color: themeMode=="light"?cust_darktheme:cust_lighttheme),),
                 ),
                 Padding(padding: EdgeInsets.only(top:20),),
                 Visibility(
@@ -84,7 +86,7 @@ class _HelpAlertBoxState extends State<HelpAlertBox> {
                       ),
                       child: ListTile(
                         leading: Icon(Icons.local_hospital,color: Colors.red,),
-                        title: Text(emergencyPhone,style:cust_TitleTextStyle,),
+                        title: Text(emergencyPhone,style:cust_TitleTextStyle.copyWith(color: themeMode=="light"?cust_darktheme:cust_lighttheme),),
                         trailing: Icon(Icons.call,color: Colors.green,),
                       ),
                   ),

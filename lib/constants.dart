@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 
 //Global Color Scheme
+String themeMode="light";
 const cust_backgroundColor=Color(0xff503CAA);
 const cust_yellowishBackground=Color(0xffFFB306);
-
+const cust_darktheme=Colors.black;
+const cust_lighttheme=Colors.white;
 
 //TextStyle
 

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:covid_19/constants.dart';
-class SymptomCard extends StatelessWidget {
-  //bodytext that appear in symptoms and path to new Image
-  String bodytext, pathToAsset;
-  SymptomCard({this.bodytext,this.pathToAsset});
+import 'package:url_launcher/url_launcher.dart';
+class Donationbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-  double screenheight = MediaQuery.of(context).size.height;
+    double screenheight = MediaQuery.of(context).size.height;
   double screenwidth = MediaQuery.of(context).size.width;
     return Stack(
             alignment: Alignment.topLeft,
@@ -18,7 +16,7 @@ class SymptomCard extends StatelessWidget {
                     width: screenwidth*0.5,
                     child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                    child: Text("Symptoms",maxLines: 1,style: cust_bodyTextStyle.copyWith(color:Colors.white,fontSize:20,fontWeight: FontWeight.w700),),
+                    child: Text("PM Cares Fund",maxLines: 1,style: cust_bodyTextStyle.copyWith(color:Colors.white,fontSize:20,fontWeight: FontWeight.w700),),
                   ),
                 ),
               ),
@@ -29,13 +27,27 @@ class SymptomCard extends StatelessWidget {
                     width: screenwidth*0.6,
                     child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                    child: Text(bodytext,maxLines: 4,style: cust_bodyTextStyle.copyWith(color:Colors.white),),
+                    child: Text("Your small contribution will make a big difference in fighting the pandemic.",maxLines: 4,style: cust_bodyTextStyle.copyWith(color:Colors.white),),
                   ),
                 ),
               ),
               Positioned(
-                  left: screenwidth*0.6+10,
-                  top:40,
+                  top: 130,
+                  child: Container(
+                    height: screenheight*0.1,
+                    width: screenwidth*0.6,
+                    child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
+                    child:InkWell(
+                      child: Text("Learn more",style:TextStyle(fontWeight:FontWeight.w700,color:cust_yellowishBackground),),
+                      onTap: openFundPage,
+                    )
+                  ),
+                ),
+              ),
+              Positioned(
+                  left: screenwidth*0.6+5,
+                  top:20,
                   child: Container(
                     child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
@@ -52,9 +64,10 @@ class SymptomCard extends StatelessWidget {
                     child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Image(
-                      image: AssetImage(pathToAsset),
-                      height: screenheight*0.1+100,
-                      width: screenwidth*0.1+100,
+
+                      image: AssetImage("assets/svg/donation.png"),
+                      height: screenheight*0.1+70,
+                      width: screenwidth*0.1+70,
                     )
                   ),
                 ),
@@ -62,5 +75,14 @@ class SymptomCard extends StatelessWidget {
               
             ],
           );
+  }
+  openFundPage() async {
+    String url="https://www.bhimupi.org.in/donation-digitized-with-bhim-upi";
+    if(await canLaunch(url)){
+      await launch(url);
+    }
+    else{
+      throw 'Cannot Launch Page';
+    }
   }
 }

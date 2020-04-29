@@ -82,6 +82,7 @@ class _StatisticsboxState extends State<Statisticsbox> {
       home:DefaultTabController(
         length: 2,
         child: Scaffold(
+          backgroundColor:themeMode=="light"?cust_lighttheme:cust_darktheme,
           appBar: PreferredSize(
             child: Container(
               height:screenheight,

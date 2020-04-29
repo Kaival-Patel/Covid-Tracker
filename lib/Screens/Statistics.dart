@@ -205,7 +205,7 @@ class _StatisticsState extends State<Statistics> {
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.all(10),
-                      child: Text("Past 7 days Data (India)",style: cust_TitleTextStyle,),
+                      child: Text("Past 7 days Data (India)",style: cust_TitleTextStyle.copyWith(color: themeMode=="light"?cust_darktheme:cust_lighttheme),),
                     ),
                     
                   ],
@@ -224,7 +224,7 @@ class _StatisticsState extends State<Statistics> {
                                   width: 10,
                                   color: Colors.blue,
                                 ),
-                                Text("  Confirmed")
+                                Text("  Confirmed",style: TextStyle(color: themeMode=="light"?cust_darktheme:cust_lighttheme),),
                               ],
                             ),
                           ),
@@ -237,7 +237,7 @@ class _StatisticsState extends State<Statistics> {
                                   width: 10,
                                   color: Colors.green,
                                 ),
-                                Text("  Recovered")
+                                Text("  Recovered",style: TextStyle(color: themeMode=="light"?cust_darktheme:cust_lighttheme),)
                               ],
                             ),
                           ),
@@ -250,7 +250,7 @@ class _StatisticsState extends State<Statistics> {
                                   width: 10,
                                   color: Colors.red,
                                 ),
-                                Text("  Deaths")
+                                Text("  Deaths",style: TextStyle(color: themeMode=="light"?cust_darktheme:cust_lighttheme),)
                               ],
                             ),
                           )

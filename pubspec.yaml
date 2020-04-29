@@ -57,6 +57,9 @@ flutter:
    - assets/svg/mask.png
    - assets/svg/virus.png
    - assets/svg/symptom.png
+   - assets/svg/sun.png
+   - assets/svg/moon.png
+   - assets/svg/donation.png
    
 
 
