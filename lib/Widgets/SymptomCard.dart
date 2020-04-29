@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:covid_19/constants.dart';
 class SymptomCard extends StatelessWidget {
@@ -18,7 +19,7 @@ class SymptomCard extends StatelessWidget {
                     width: screenwidth*0.5,
                     child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                    child: Text("Symptoms",style: cust_bodyTextStyle.copyWith(color:Colors.white,fontSize:20,fontWeight: FontWeight.w700),),
+                    child: Text("Symptoms",maxLines: 1,style: cust_bodyTextStyle.copyWith(color:Colors.white,fontSize:20,fontWeight: FontWeight.w700),),
                   ),
                 ),
               ),
@@ -29,7 +30,7 @@ class SymptomCard extends StatelessWidget {
                     width: screenwidth*0.6,
                     child: Padding(
                     padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-                    child: Text(bodytext,style: cust_bodyTextStyle.copyWith(color:Colors.white),),
+                    child: AutoSizeText(bodytext,maxLines: 4,style: cust_bodyTextStyle.copyWith(color:Colors.white),),
                   ),
                 ),
               ),

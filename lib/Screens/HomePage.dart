@@ -1,7 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19/Screens/Statistics.dart';
 import 'package:covid_19/Widgets/TestCard.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Widgets/SymptomCard.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,11 +15,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _children=[
     Home(),
-    Text("Statistics"),
+    Statistics(),
     Text("Reports"),
     Text("Developer Profile")
   ];
   int _currentbottomPos=0;
+
+
+  viewDevInsta() async{
+  
+  const url = 'https://instagram.com/kaival.dart';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: cust_backgroundColor,
-        title: Text("Covid-19 Tracker by Kaival",style: cust_TitleTextStyle,),
+        title: AutoSizeText("Covid-19 Tracker by Kaival",style: cust_TitleTextStyle,),
         actions: <Widget>[
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +49,9 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.all(7.0),
                 child: GestureDetector(
                   //view my repo on github
-                    onTap: (){},
+                    onTap: (){
+                      viewDevInsta();
+                    },
                     child: CircleAvatar(
                     maxRadius: 17.0,
                     backgroundImage: AssetImage("assets/img/developer.png"),
@@ -120,60 +136,62 @@ class Home extends StatelessWidget {
 
 
               //Prevention Section
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text("Prevention",style: cust_HeadingTextStyle,),
-                      
-                    ],
-                  ),
-                  Padding(padding: EdgeInsets.only(bottom:10.0),),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image(image: AssetImage("assets/svg/home.png"),height: 50,width:50,),
-                            Text("Stay At Home",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
-                            Padding(padding: EdgeInsets.only(top:25.0),),
-                            Image(image: AssetImage("assets/svg/cough.png"),height: 50,width:50,),
-                            Text("Cover Coughs\nand sneezes",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text("Prevention",style: cust_HeadingTextStyle,),
+                        
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.only(bottom:10.0),),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: <Widget>[
+                              Image(image: AssetImage("assets/svg/home.png"),height: 50,width:50,),
+                              Text("Stay At Home",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
+                              Padding(padding: EdgeInsets.only(top:25.0),),
+                              Image(image: AssetImage("assets/svg/cough.png"),height: 50,width:50,),
+                              Text("Cover Coughs\nand sneezes",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
+                                  
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: <Widget>[
+                              Image(image: AssetImage("assets/svg/distance.png"),height: 50,width:50,),
+                              Text("Keep a Safe \n  Distance",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
+                              Padding(padding: EdgeInsets.only(top:5.0),),
+                              Image(image: AssetImage("assets/svg/mask.png"),height: 50,width:50,),
+                              Text("Wear facemask\nif you are sick",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
                                 
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image(image: AssetImage("assets/svg/distance.png"),height: 50,width:50,),
-                            Text("Keep a Safe \n  Distance",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
-                            Padding(padding: EdgeInsets.only(top:5.0),),
-                            Image(image: AssetImage("assets/svg/mask.png"),height: 50,width:50,),
-                            Text("Wear facemask\nif you are sick",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
-                              
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(
+                            children: <Widget>[
+                              Image(image: AssetImage("assets/svg/hands.png"),height: 50,width:50,),
+                              Text("Wash hands\noften",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
+                              Padding(padding: EdgeInsets.only(top:5.0),),
+                              Image(image: AssetImage("assets/svg/clean.png"),height: 50,width:50,),
+                              Text("Clean and\ndisinfect",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image(image: AssetImage("assets/svg/hands.png"),height: 50,width:50,),
-                            Text("Wash hands\noften",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center),
-                            Padding(padding: EdgeInsets.only(top:5.0),),
-                            Image(image: AssetImage("assets/svg/clean.png"),height: 50,width:50,),
-                            Text("Clean and\ndisinfect",style: cust_bodyTextStyle.copyWith(fontSize: 12),textAlign: TextAlign.center)
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
               //Prevention Section Ends
 

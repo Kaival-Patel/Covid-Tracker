@@ -91,7 +91,7 @@ class _StatisticsboxState extends State<Statisticsbox> {
                   Align(
                     alignment:Alignment.centerLeft,
                     child:Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.fromLTRB(22, 10, 0, 12),
                       child: Text("Statistics",style: cust_TitleTextStyle.copyWith(fontSize: 30,color: Colors.white),),
                     ),
                   ),
@@ -137,6 +137,16 @@ class _StatisticsboxState extends State<Statisticsbox> {
                           backgroundColor: cust_backgroundColor,
                         ),
                       ),
+                    Visibility(
+                        visible: isLoading?false:true,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(25, 20, 0, 10),
+                            child: Text("Today",style: cust_TitleTextStyle.copyWith(color: Color(0xff7F6FC8)),),
+                          ),
+                        ),
+                      ),  
                   
                 ],
               ),
