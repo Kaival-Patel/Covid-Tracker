@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19/Screens/AboutDeveloper.dart';
 import 'package:covid_19/Screens/Reports.dart';
 import 'package:covid_19/Screens/Statistics.dart';
 import 'package:covid_19/Widgets/TestCard.dart';
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
     Home(),
     Statistics(),
     Reports(),
-    Text("Developer Profile")
+    AboutDeveloper(),
   ];
   int _currentbottomPos=0;
 
