@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
     Statistics(),
     Reports(),
     AboutDeveloper(),
+
   ];
   int _currentbottomPos=0;
 
@@ -121,6 +122,8 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.person,color: Colors.grey,),
                 activeIcon: Icon(Icons.person,color:cust_backgroundColor,),
               ),
+              
+
             ] 
           ),
         ),
