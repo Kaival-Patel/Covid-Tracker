@@ -28,3 +28,8 @@ I would like to appreciate work of the following people and community at the sta
   <li>Reports (Donation to PM Cares Fund and Statistics of All the States of India</li>
   <li>About Developer (About me Section with Social buttons to follow me and links to my Github REPO)</li>
 </ol>
+<br>
+
+<h5>Lets get this Party Started :)</h5>
+
+<img src="ss/gif/started.gif" alt="Started"/>
