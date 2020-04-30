@@ -127,5 +127,10 @@ Lets have a Look!!!😍<br>
   </tr>
 </table>
 
+<br><br>
+
+<h3>Thats it for now, Let me know if you have any suggestion regarding the app on <a href="mailto:kaivalpatel53@gmail.com">📨Here is my Gmail📭</a></h3>
+
+
 
 
