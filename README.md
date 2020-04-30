@@ -1,16 +1,17 @@
-# covid_19
+# Covid Tracker by Kaival Patel
 
-A new Flutter project.
+This app shows the corona data of India with features like helpline numbers and call them with Every states corona status.In addition to this it also shows the global data of corona.
+
+Developed in Flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+I would like to appreciate work of the following people and community at the start.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### API DISTRIBUTION
+<p>
+  GLOBAL DATA FECTH =&gt; <a href="https://coronavirus-19-api.herokuapp.com/all" rel="nofollow">Global Data Api</a><br>
+  INDIAN DATA FETCH =&gt; <a href="https://api.rootnet.in/covid19-in/stats/latest" rel="nofollow">covid19India</a><br>
+  <a href="https://www.covid19india.org/" rel="nofollow">AWESOME CORONA TRACKER WEBSITE A BIG HATSOFF TO WORK</a><br>
+  <br>
+</p>
