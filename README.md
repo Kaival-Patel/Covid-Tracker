@@ -40,8 +40,8 @@ Lets have a Look!!!😍
 
 <table>
   <tr>
-    <td><b>☀️Home☀️</b></td>
-     <td><b>🌜Home🌜</b></td>
+    <td><b><a target="_blank" href="ss/img/homelight.png">☀️Home☀️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/homedark.png">🌜Home🌜</a></b></td>
   </tr>
   <tr>
     <td><img src="ss/img/homelight.png" ></td>
