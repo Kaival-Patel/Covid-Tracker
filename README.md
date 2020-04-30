@@ -77,4 +77,28 @@ Lets have a Look!!!😍<br>
    
   </tr>
 </table>
+<br><br><br>
+<h5>🐬Lets see the Working of the App 🎥</h5>
+<br>
+<br>
+<table>
+  <tr>
+    <td><b><a target="_blank" href="ss/img/homelight.png">⚡️Home⚡️</a></b></td>
+  </tr>
+  <tr>
+    <td><img src="ss/gif/homegif.gif" ></td>
+  </tr>
+</table>
+
+<br><br>
+<table>
+  <tr>
+    <td><b><a target="_blank" href="ss/gif/stats.gif">❄️Statistics❄️</a></b></td>
+  </tr>
+  <tr>
+    <td><img src="ss/gif/stats.gif" ></td>
+  </tr>
+</table>
+
+
 
