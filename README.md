@@ -83,10 +83,10 @@ Lets have a Look!!!😍<br>
 <br>
 <table>
   <tr>
-    <td><b><a target="_blank" href="ss/img/homelight.png">⚡️Home⚡️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/homegif.gif">⚡️Home⚡️</a></b></td>
   </tr>
   <tr>
-    <td><img src="ss/gif/homegif.gif" ></td>
+    <td><img height="150" src="ss/gif/homegif.gif" ></td>
   </tr>
 </table>
 
