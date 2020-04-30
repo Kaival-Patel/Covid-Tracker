@@ -38,3 +38,15 @@ I would like to appreciate work of the following people and community at the sta
 <h5> ☀️ 🌜 Dark Mode is Also Implemented in the App </h5>
 Lets have a Look!!!😍
 
+<table>
+  <tr>
+    <td><b>☀️Home☀️</b></td>
+     <td><b>🌜Home🌜</b></td>
+  </tr>
+  <tr>
+    <td><img src="ss/img/homelight.png" ></td>
+    <td><img src="ss/img/homedark.png"></td>
+   
+  </tr>
+</table>
+
