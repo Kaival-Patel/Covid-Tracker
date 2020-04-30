@@ -33,3 +33,8 @@ I would like to appreciate work of the following people and community at the sta
 <h5>Lets get this Party Started :)</h5>
 
 <img src="ss/gif/started.gif" alt="Started"/>
+<br>
+
+<h5> ☀️ 🌜 Dark Mode is Also Implemented in the App </h5>
+Lets have a Look!!!😍
+
