@@ -54,8 +54,8 @@ Lets have a Look!!!😍<br>
 <!--Stats-->
 <table>
   <tr>
-    <td><b><a target="_blank" href="ss/img/statslight.png">☀️Home☀️</a></b></td>
-    <td><b><a target="_blank" href="ss/img/statsdark.png">🌜Home🌜</a></b></td>
+    <td><b><a target="_blank" href="ss/img/statslight.png">☀️Statistics☀️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/statsdark.png">🌜Statistics🌜</a></b></td>
   </tr>
   <tr>
     <td><img src="ss/img/statslight.png" ></td>
@@ -68,12 +68,12 @@ Lets have a Look!!!😍<br>
 <!--Report-->
 <table>
   <tr>
-    <td><b><a target="_blank" href="ss/img/homelight.png">☀️Home☀️</a></b></td>
-    <td><b><a target="_blank" href="ss/img/homedark.png">🌜Home🌜</a></b></td>
+    <td><b><a target="_blank" href="ss/img/reportlight.png">☀️Reports☀️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/reportdark.png">🌜Reports🌜</a></b></td>
   </tr>
   <tr>
-    <td><img src="ss/img/homelight.png" ></td>
-    <td><img src="ss/img/homedark.png"></td>
+    <td><img src="ss/img/reportlight.png" ></td>
+    <td><img src="ss/img/reportdark.png"></td>
    
   </tr>
 </table>
