@@ -20,3 +20,11 @@ I would like to appreciate work of the following people and community at the sta
 <p>Show Some love <br>
   <a href="https://www.uplabs.com/posts/covid-19-e9c787fc-2d76-47e5-8b43-e3e5c68bfe5e" rel="nofollow">COVID-19 UI by Ram Lakhan on        Uplabs.com</a>
 </p>
+
+<p>App Consist of four Parts</p>
+<ol type="numbers">
+  <li>Home (Symptoms and Prevention)</li>
+  <li>Statistics (India and Global data with Graph of past 7 days of India)</li>
+  <li>Reports (Donation to PM Cares Fund and Statistics of All the States of India</li>
+  <li>About Developer (About me Section with Social buttons to follow me and links to my Github REPO)</li>
+</ol>
