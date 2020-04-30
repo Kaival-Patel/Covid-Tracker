@@ -36,8 +36,36 @@ I would like to appreciate work of the following people and community at the sta
 <br>
 
 <h5> ☀️ 🌜 Dark Mode is Also Implemented in the App </h5>
-Lets have a Look!!!😍
+Lets have a Look!!!😍<br>
 
+<!--Home-->
+<table>
+  <tr>
+    <td><b><a target="_blank" href="ss/img/homelight.png">☀️Home☀️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/homedark.png">🌜Home🌜</a></b></td>
+  </tr>
+  <tr>
+    <td><img src="ss/img/homelight.png" ></td>
+    <td><img src="ss/img/homedark.png"></td>
+   
+  </tr>
+</table>
+<br><br>
+<!--Stats-->
+<table>
+  <tr>
+    <td><b><a target="_blank" href="ss/img/statslight.png">☀️Home☀️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/statsdark.png">🌜Home🌜</a></b></td>
+  </tr>
+  <tr>
+    <td><img src="ss/img/statslight.png" ></td>
+    <td><img src="ss/img/statsdark.png"></td>
+   
+  </tr>
+</table>
+
+<br><br>
+<!--Report-->
 <table>
   <tr>
     <td><b><a target="_blank" href="ss/img/homelight.png">☀️Home☀️</a></b></td>
