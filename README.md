@@ -78,6 +78,23 @@ Lets have a Look!!!😍<br>
   </tr>
 </table>
 <br><br><br>
+
+<!--About-->
+<table>
+  <tr>
+    <td><b><a target="_blank" href="ss/img/devlight.png">☀️Developer☀️</a></b></td>
+    <td><b><a target="_blank" href="ss/img/devdark.png">🌜Developer🌜</a></b></td>
+  </tr>
+  <tr>
+    <td><img src="ss/img/devlight.png" ></td>
+    <td><img src="ss/img/devdark.png"></td>
+   
+  </tr>
+</table>
+<br><br><br>
+
+
+
 <h5>🐬Lets see the Working of the App 🎥</h5>
 <br>
 <br>
