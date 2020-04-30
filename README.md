@@ -86,7 +86,7 @@ Lets have a Look!!!😍<br>
     <td><b><a target="_blank" href="ss/img/homegif.gif">⚡️Home⚡️</a></b></td>
   </tr>
   <tr>
-    <td><img height="450" src="ss/gif/homegif.gif" ></td>
+    <td><img height="500" src="ss/gif/homegif.gif" ></td>
   </tr>
 </table>
 
@@ -96,7 +96,17 @@ Lets have a Look!!!😍<br>
     <td><b><a target="_blank" href="ss/gif/stats.gif">❄️Statistics❄️</a></b></td>
   </tr>
   <tr>
-    <td><img src="ss/gif/stats.gif" ></td>
+    <td><img height="500" src="ss/gif/stats.gif" ></td>
+  </tr>
+</table>
+
+<br><br>
+<table>
+  <tr>
+    <td><b><a target="_blank" href="ss/gif/reports.gif">🐧Reports🐧</a></b></td>
+  </tr>
+  <tr>
+    <td><img height="500" src="ss/gif/reports.gif" ></td>
   </tr>
 </table>
 
