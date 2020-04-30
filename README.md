@@ -15,3 +15,8 @@ I would like to appreciate work of the following people and community at the sta
   <a href="https://www.covid19india.org/" rel="nofollow">AWESOME CORONA TRACKER WEBSITE A BIG HATSOFF TO WORK</a><br>
   <br>
 </p>
+
+### UI Used in this App
+<p>Show Some love <br>
+  <a href="https://www.uplabs.com/posts/covid-19-e9c787fc-2d76-47e5-8b43-e3e5c68bfe5e" rel="nofollow">COVID-19 UI by Ram Lakhan on        Uplabs.com</a>
+</p>
